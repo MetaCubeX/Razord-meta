@@ -13,8 +13,8 @@
 
 .sidebar-logo {
     margin-top: 50px;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
 }
 
 .sidebar-menu {
@@ -29,11 +29,12 @@
 
         > a {
             display: block;
-            width: 120px;
+            width: 62px;
             height: 36px;
             line-height: 36px;
-            font-size: 14px;
-            border-radius: 18px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 4px;
             text-align: center;
         }
 
@@ -60,14 +61,14 @@
 }
 
 .sidebar-version-label {
-    font-size: 14px;
+    font-size: 12px;
     color: $color-primary-dark;
     text-shadow: 0 2px 6px rgba($color: $color-primary-dark, $alpha: 0.4);
 }
 
 .sidebar-version-text {
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     margin: 8px 0;
     padding: 0 10px;
     color: $color-primary-darken;
@@ -84,8 +85,8 @@
 
     .sidebar-logo {
         margin: 0 15px;
-        width: 36px;
-        height: 36px;
+        width: 45px;
+        height: 45px;
     }
 
     .sidebar-menu {
@@ -104,7 +105,7 @@
             margin: 0 3px;
 
             > a {
-                width: 80px;
+                lebar: 70px;
                 height: 32px;
                 line-height: 32px;
             }

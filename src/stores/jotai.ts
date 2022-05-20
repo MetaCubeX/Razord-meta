@@ -46,6 +46,7 @@ export function useI18n () {
 export const version = atom({
     version: '',
     premium: false,
+    meta: false,
 })
 
 export function useVersion () {
@@ -59,8 +60,8 @@ export function useVersion () {
 
         set(
             result.isErr()
-                ? { version: '', premium: false }
-                : { version: result.value.data.version, premium: !!result.value.data.premium },
+                ? { version: '', premium: false, meta: false }
+                : { version: result.value.data.version, premium: !!result.value.data.premium, meta: !!result.value.data.meta },
         )
     })
 
@@ -68,11 +69,11 @@ export function useVersion () {
 }
 
 export function useRuleProviders () {
-    const [{ premium }] = useAtom(version)
+    const [{ premium, meta }] = useAtom(version)
     const client = useClient()
 
-    const { data, mutate } = useSWR(['/providers/rule', client, premium], async () => {
-        if (!premium) {
+    const { data, mutate } = useSWR(['/providers/rule', client, premium, meta], async () => {
+        if (!premium || !meta) {
             return []
         }
 

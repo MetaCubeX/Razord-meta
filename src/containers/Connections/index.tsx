@@ -103,19 +103,19 @@ export default function Connections () {
     const intersection = useIntersectionObserver(pinRef, { threshold: [1] })
     const columns = useMemo(
         () => table.createColumns([
-            table.createDataColumn(Columns.Host, { minSize: 260, size: 260, header: t(`columns.${Columns.Host}`) }),
+            table.createDataColumn(Columns.Host, { minSize: 150, size: 150, header: t(`columns.${Columns.Host}`) }),
             table.createDataColumn(Columns.Network, { minSize: 80, size: 80, header: t(`columns.${Columns.Network}`) }),
             table.createDataColumn(Columns.Type, { minSize: 100, size: 100, header: t(`columns.${Columns.Type}`) }),
             table.createDataColumn(Columns.Chains, { minSize: 200, size: 200, header: t(`columns.${Columns.Chains}`) }),
-            table.createDataColumn(Columns.Rule, { minSize: 140, size: 140, header: t(`columns.${Columns.Rule}`) }),
+            table.createDataColumn(Columns.Rule, { minSize: 100, size: 100, header: t(`columns.${Columns.Rule}`) }),
             table.createDataColumn(Columns.Process, { minSize: 100, size: 100, header: t(`columns.${Columns.Process}`), cell: cell => cell.value ? basePath(cell.value) : '-' }),
             table.createDataColumn(
                 row => [row.speed.upload, row.speed.download],
                 {
                     id: Columns.Speed,
                     header: t(`columns.${Columns.Speed}`),
-                    minSize: 200,
-                    size: 200,
+                    minSize: 100,
+                    size: 100,
                     sortDescFirst: true,
                     sortingFn (rowA, rowB) {
                         const speedA = rowA.original?.speed ?? { upload: 0, download: 0 }
@@ -127,15 +127,15 @@ export default function Connections () {
                     cell: cell => formatSpeed(cell.value[0], cell.value[1]),
                 },
             ),
-            table.createDataColumn(Columns.Upload, { minSize: 100, size: 100, header: t(`columns.${Columns.Upload}`), cell: cell => formatTraffic(cell.value) }),
-            table.createDataColumn(Columns.Download, { minSize: 100, size: 100, header: t(`columns.${Columns.Download}`), cell: cell => formatTraffic(cell.value) }),
-            table.createDataColumn(Columns.SourceIP, { minSize: 140, size: 140, header: t(`columns.${Columns.SourceIP}`), filterFn: 'equals' }),
-            table.createDataColumn(Columns.DestinationIP, { minSize: 140, size: 140, header: t(`columns.${Columns.DestinationIP}`) }),
+            table.createDataColumn(Columns.Upload, { minSize: 80, size: 80, header: t(`columns.${Columns.Upload}`), cell: cell => formatTraffic(cell.value) }),
+            table.createDataColumn(Columns.Download, { minSize: 80, size: 80, header: t(`columns.${Columns.Download}`), cell: cell => formatTraffic(cell.value) }),
+            table.createDataColumn(Columns.SourceIP, { minSize: 120, size: 120, header: t(`columns.${Columns.SourceIP}`), filterFn: 'equals' }),
+            table.createDataColumn(Columns.DestinationIP, { minSize: 120, size: 120, header: t(`columns.${Columns.DestinationIP}`) }),
             table.createDataColumn(
                 Columns.Time,
                 {
-                    minSize: 120,
-                    size: 120,
+                    minSize: 100,
+                    size: 100,
                     header: t(`columns.${Columns.Time}`),
                     cell: cell => fromNow(new Date(cell.value), lang),
                     sortingFn: (rowA, rowB) => (rowB.original?.time ?? 0) - (rowA.original?.time ?? 0),

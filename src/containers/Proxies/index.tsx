@@ -124,15 +124,17 @@ function Proxies () {
                     <Icon className="ml-3" type="speed" size={20} />
                     <span className="proxies-speed-test" onClick={handleNotitySpeedTest}>{t('speedTestText')}</span>
                 </Header>
-                <ul className="proxies-list">
-                    {
-                        sortedProxies.map(p => (
-                            <li key={p.name}>
-                                <Proxy config={p} />
-                            </li>
-                        ))
-                    }
-                </ul>
+                <Card className="proxy-provider">
+                    <ul className="proxies-list">
+                        {
+                            sortedProxies.map(p => (
+                                <li key={p.name}>
+                                    <Proxy config={p} />
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </Card>
             </div>
         }
     </>

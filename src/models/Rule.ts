@@ -18,5 +18,7 @@ export interface Rule {
 
     proxy?: string // proxy or proxy group name
 
+    size?: number
+
     Size?: number
 }

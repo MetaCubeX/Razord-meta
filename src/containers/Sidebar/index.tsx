@@ -17,7 +17,7 @@ interface SidebarProps {
 export default function Sidebar (props: SidebarProps) {
     const { routes } = props
     const { translation } = useI18n()
-    const { version, premium } = useVersion()
+    const { version, premium, meta } = useVersion()
     const { data } = useClashXData()
     const { t } = translation('SideBar')
     const location = useLocation()
@@ -41,7 +41,7 @@ export default function Sidebar (props: SidebarProps) {
             <div className="sidebar-version">
                 <span className="sidebar-version-label">Clash{ data?.isClashX && 'X' } { t('Version') }</span>
                 <span className="sidebar-version-text">{ version }</span>
-                { premium && <span className="sidebar-version-label">Premium</span> }
+                { meta && <span className="sidebar-version-label">Meta</span> }
             </div>
         </div>
     )

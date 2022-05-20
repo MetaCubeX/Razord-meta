@@ -2,7 +2,7 @@ import type{ AxiosError } from 'axios'
 import classnames from 'classnames'
 import { ResultAsync } from 'neverthrow'
 import { useMemo, useLayoutEffect, useCallback } from 'react'
-
+import { Card } from '@components'
 import EE, { Action } from '@lib/event'
 import { isClashX, jsBridge } from '@lib/jsBridge'
 import { Proxy as IProxy } from '@lib/request'
@@ -73,7 +73,7 @@ export function Proxy (props: ProxyProps) {
         <div className={classnames('proxy-item', { 'proxy-error': hasError }, className)}>
             <span className="proxy-type" style={{ backgroundColor }}>{config.type}</span>
             <p className="proxy-name">{config.name}</p>
-            <p className="proxy-delay">{delay === 0 ? '-' : `${delay}ms`}</p>
+            <p className="proxy-delay" style={{ color }}>{delay === 0 ? '-' : `${delay}ms`}</p>
         </div>
     )
 }

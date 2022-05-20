@@ -2,7 +2,7 @@ import { useAtom } from 'jotai'
 import { useMemo } from 'react'
 
 import { Tags, Tag } from '@components'
-import { Group as IGroup } from '@lib/request'
+import { Group as IGroup, Proxies as IProxy } from '@lib/request'
 import { useProxy, useConfig, proxyMapping, useClient } from '@stores'
 
 import './style.scss'

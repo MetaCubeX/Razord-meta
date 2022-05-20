@@ -10,7 +10,9 @@ html {
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    border-style: hidden !important;
+    //box-sizing: inherit;
+
 }
 
 body {

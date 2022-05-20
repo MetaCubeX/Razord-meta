@@ -18,6 +18,7 @@ export interface Rule {
     type: string
     payload: string
     proxy: string
+    size: number
     Size: number
 }
 
@@ -156,7 +157,7 @@ export class Client {
     }
 
     async getVersion () {
-        return await this.axiosClient.get<{ version: string, premium?: boolean }>('version')
+        return await this.axiosClient.get<{ version: string, premium?: boolean, meta?: boolean }>('version')
     }
 
     async getProxyDelay (name: string) {

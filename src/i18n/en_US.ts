@@ -5,7 +5,7 @@ const EN = {
         Logs: 'Logs',
         Rules: 'Rules',
         Settings: 'Setting',
-        Connections: 'Connections',
+        Connections: 'List',
         Version: 'Version',
     },
     Settings: {
@@ -52,16 +52,16 @@ const EN = {
         ruleCount: 'Rule count',
     },
     Connections: {
-        title: 'Connections',
-        keepClosed: 'Keep closed connections',
+        title: 'List',
+        keepClosed: 'closed all',
         total: {
             text: 'total',
-            upload: 'upload',
-            download: 'download',
+            upload: '↑',
+            download: '↓',
         },
         closeAll: {
             title: 'Warning',
-            content: 'This would close all connections',
+            content: 'Close all',
         },
         filter: {
             all: 'All',
@@ -125,7 +125,7 @@ const EN = {
         expandText: 'Expand',
         collapseText: 'Collapse',
         speedTestText: 'Speed Test',
-        breakConnectionsText: 'Close connections which include the group',
+        breakConnectionsText: 'Close old Connections',
     },
     Modal: {
         ok: 'Ok',

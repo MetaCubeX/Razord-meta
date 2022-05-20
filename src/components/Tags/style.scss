@@ -13,14 +13,16 @@ $height: 22px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid $color-primary-dark;
-        color: $color-primary-darken;
+        border: 1px solid #609ab8;
+        color: #000000;
         height: $height + 2px;
         border-radius: 5px;
         padding: 0 5px;
-        margin: 4px;
-        font-size: 12px;
+        margin: 5px;
+        font-size: 10px;
+        background-color: rgb(97 156 194 / 20%);
     }
+
 
     li.error {
         color: #fff;
@@ -36,10 +38,10 @@ $height: 22px;
     }
 
     .tags-selected {
-        background-color: $color-primary-dark;
-        color: #fff;
+        background-color: #609ab8;
+        color: #ffffff;
 		padding: 10px 12px;
-		border: 2px solid $color-primary-dark;
+		border: 2px solid #609ab8;
 		font-weight: 700;
     }
 }

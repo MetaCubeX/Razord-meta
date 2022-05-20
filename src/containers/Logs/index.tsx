@@ -71,7 +71,7 @@ export default function Logs () {
                     {
                         logs.map(
                             (log, index) => (
-                                <li className="leading-5 inline-block text-[11px]" key={index}>
+                                <li className="leading-5 inline-block" key={index}>
                                     <span className="mr-2 text-orange-400">[{ dayjs(log.time).format('YYYY-MM-DD HH:mm:ss') }]</span>
                                     <span className={logMap.get(log.type)}>[{ log.type.toUpperCase() }]</span>
                                     <span> { log.payload }</span>
