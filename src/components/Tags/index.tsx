@@ -25,7 +25,7 @@ export function Tags (props: TagsProps) {
 
     const ulRef = useRef<HTMLUListElement>(null)
     useLayoutEffect(() => {
-        setShowExtend((ulRef?.current?.offsetHeight ?? 0) > 30)
+        setShowExtend((ulRef?.current?.offsetHeight ?? 0) > 35)
     }, [])
 
     const rowHeight = expand ? 'auto' : rawHeight

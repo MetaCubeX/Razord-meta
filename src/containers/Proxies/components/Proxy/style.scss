@@ -7,7 +7,7 @@
     background: $color-white;
     user-select: none;
     cursor: default;
-    box-shadow: 2px 5px 20px -3px rgba($color-primary-dark, 0.2);
+    box-shadow: 0 0 18px 0 rgba($color-primary-dark, 0.1);
     transition: all 300ms ease;
 
     .proxy-type {
@@ -48,7 +48,7 @@
     }
 
     &:hover {
-        box-shadow: 0 14px 20px -4px rgba($color-primary-darken, 0.4);
+        box-shadow: 0 0 18px 0 rgba($color-primary-darken, 0.4);
 
         .proxy-editor {
             opacity: 1;

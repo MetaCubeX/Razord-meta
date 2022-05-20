@@ -15,11 +15,11 @@ $height: 22px;
         justify-content: center;
         border: 1px solid $color-primary-dark;
         color: $color-primary-darken;
-        height: $height;
-        border-radius: math.div($height, 2);
-        padding: 0 6px;
-        margin: 3px 4px;
-        font-size: 10px;
+        height: $height + 2px;
+        border-radius: 5px;
+        padding: 0 5px;
+        margin: 4px;
+        font-size: 12px;
     }
 
     li.error {
@@ -38,5 +38,8 @@ $height: 22px;
     .tags-selected {
         background-color: $color-primary-dark;
         color: #fff;
+		padding: 10px 12px;
+		border: 2px solid $color-primary-dark;
+		font-weight: 700;
     }
 }
