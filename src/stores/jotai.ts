@@ -257,7 +257,7 @@ export function useLogsStreamReader () {
 
     const level = logLevel || general.logLevel
     const previousKey = usePreviousDistinct(
-        `${apiInfo.protocol}//${apiInfo.hostname}:${apiInfo.port}/logs?level=${level}&secret=${apiInfo.secret}`,
+        `${apiInfo.protocol}//${apiInfo.hostname}:${apiInfo.port}/logs?level=${level}&secret=${encodeURIComponent(apiInfo.secret)}`,
     )
 
     const apiInfoRef = useSyncedRef(apiInfo)
@@ -266,7 +266,7 @@ export function useLogsStreamReader () {
         if (level) {
             const apiInfo = apiInfoRef.current
             const protocol = apiInfo.protocol === 'http:' ? 'ws:' : 'wss:'
-            const logUrl = `${protocol}//${apiInfo.hostname}:${apiInfo.port}/logs?level=${level}&token=${apiInfo.secret}`
+            const logUrl = `${protocol}//${apiInfo.hostname}:${apiInfo.port}/logs?level=${level}&token=${encodeURIComponent(apiInfo.secret)}`
             item.connect(logUrl)
         }
     }, [apiInfoRef, item, level, previousKey])
@@ -280,7 +280,7 @@ export function useConnectionStreamReader () {
     const connection = useRef(new StreamReader<Snapshot>({ bufferLength: 200 }))
 
     const protocol = apiInfo.protocol === 'http:' ? 'ws:' : 'wss:'
-    const url = `${protocol}//${apiInfo.hostname}:${apiInfo.port}/connections?token=${apiInfo.secret}`
+    const url = `${protocol}//${apiInfo.hostname}:${apiInfo.port}/connections?token=${encodeURIComponent(apiInfo.secret)}`
 
     useEffect(() => {
         connection.current.connect(url)
