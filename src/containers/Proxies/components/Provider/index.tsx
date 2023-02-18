@@ -31,9 +31,11 @@ export function Provider(props: ProvidersProps) {
             .finally(() => hide());
     }
     const expireStr = useMemo(() => {
-        const expire = provider.subscriptionInfo?.Expire
-            ? new Date(provider.subscriptionInfo.Expire * 1000)
-            : new Date(0);
+        if (!provider.subscriptionInfo?.Expire) {
+            return
+        }
+
+        const expire = new Date(provider.subscriptionInfo.Expire * 1000);
         const getYear = expire.getFullYear().toString() + "-";
         const getMonth =
             (expire.getMonth() + 1 < 10
@@ -67,7 +69,7 @@ export function Provider(props: ProvidersProps) {
                     <Tag className="rule-provider-behavior m-0">
                         {provider.proxies.length}
                     </Tag>
-                    {provider.subscriptionInfo?.Expire !== 0 && (
+                    {expireStr && (
                         <Tag className="rule-provider-expire m-0">
                             Expire: {expireStr}
                         </Tag>
