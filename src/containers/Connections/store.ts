@@ -8,6 +8,7 @@ export type Connection = API.Connections & { completed?: boolean, uploadSpeed: n
 export interface FormatConnection {
     id: string
     host: string
+    sniffHost: string
     chains: string
     rule: string
     time: number

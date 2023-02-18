@@ -40,6 +40,14 @@ export function ConnectionInfo (props: ConnectionsInfoProps) {
                 }</span>
             </div>
             <div className="flex my-3">
+                <span className="font-bold w-20">{t('info.host')}</span>
+                <span className="font-mono flex-1 break-all">{
+                    props.connection.metadata
+                        ? `${props.connection.metadata.sniffHost}`
+                        : t('info.hostEmpty')
+                }</span>
+            </div>
+            <div className="flex my-3">
                 <span className="font-bold w-20">{t('info.dstIP')}</span>
                 <span className="font-mono">{
                     props.connection.metadata

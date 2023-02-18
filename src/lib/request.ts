@@ -90,6 +90,7 @@ export interface Connections {
         network: string
         type: string
         host: string
+        sniffHost: string
         processPath?: string
         sourceIP: string
         sourcePort: string

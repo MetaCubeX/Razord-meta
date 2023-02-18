@@ -68,6 +68,7 @@ const CN = {
         },
         columns: {
             host: '域名',
+            sniffHost: '嗅探域名',
             network: '网络',
             process: '进程',
             type: '类型',

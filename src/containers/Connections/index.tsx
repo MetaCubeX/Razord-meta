@@ -20,6 +20,7 @@ import './style.scss'
 
 const Columns = {
     Host: 'host',
+    SniffHost: 'sniffHost',
     Network: 'network',
     Process: 'process',
     Type: 'type',
@@ -76,6 +77,7 @@ export default function Connections () {
         c => ({
             id: c.id,
             host: `${c.metadata.host || c.metadata.destinationIP}:${c.metadata.destinationPort}`,
+            sniffHost: c.metadata.sniffHost,
             chains: c.chains.slice().reverse().join(' / '),
             rule: c.rulePayload ? `${c.rule} :: ${c.rulePayload}` : c.rule,
             time: new Date(c.start).getTime(),
@@ -104,6 +106,7 @@ export default function Connections () {
     const columns = useMemo(
         () => table.createColumns([
             table.createDataColumn(Columns.Host, { minSize: 260, size: 260, header: t(`columns.${Columns.Host}`) }),
+            table.createDataColumn(Columns.SniffHost, { minSize: 260, size: 200, header: t(`columns.${Columns.SniffHost}`) }),
             table.createDataColumn(Columns.Network, { minSize: 80, size: 80, header: t(`columns.${Columns.Network}`) }),
             table.createDataColumn(Columns.Type, { minSize: 100, size: 100, header: t(`columns.${Columns.Type}`) }),
             table.createDataColumn(Columns.Chains, { minSize: 200, size: 200, header: t(`columns.${Columns.Chains}`) }),

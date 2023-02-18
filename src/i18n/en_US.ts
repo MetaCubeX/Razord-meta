@@ -68,6 +68,7 @@ const EN = {
         },
         columns: {
             host: 'Host',
+            sniffHost: 'Sniff Host',
             network: 'Network',
             type: 'Type',
             chains: 'Chains',
