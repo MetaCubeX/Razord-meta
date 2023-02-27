@@ -31,7 +31,7 @@ export function Provider(props: ProvidersProps) {
             .finally(() => hide());
     }
     const expireStr = useMemo(() => {
-        if (!provider.subscriptionInfo?.Expire) {
+        if (provider.subscriptionInfo?.Expire == null) {
             return
         }
 
