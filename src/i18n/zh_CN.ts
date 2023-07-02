@@ -39,6 +39,7 @@ const CN = {
             host: 'Host',
             port: '端口',
             secret: '密钥',
+            protocol: '协议',
         },
     },
     Logs: {
